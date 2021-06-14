@@ -1,16 +1,7 @@
 #include "Titular.hpp"
 #include <iostream>
 
-Titular::Titular(Cpf cpf, std::string nome):cpf(cpf),nome(nome) {
-    verificaTamanhoDoNome();
-}
+// construtor com herança 
+Titular::Titular(Cpf cpf, std::string nome):Pessoa(cpf,nome){
 
-void Titular::verificaTamanhoDoNome() {
-    if (nome.size() < 5) {
-        std::cout << "Nome muito curto" << std::endl;
-        exit(1);
-    }
-}
-std::string Titular::getNome() {
-    return nome;
 }

@@ -13,7 +13,6 @@ std::string Cpf::getCpf() {
 
 
 
-
 // Verificar cpf 
 void Cpf::cpfExiste() {	
 	verificandoPrimeiroDigito();
@@ -74,8 +73,8 @@ int* Cpf::pegandoNumerosCpf() {
 	traco[0] = '-';
 	if (this->cpf.size() == 14) {
 		for (int i = 0; i < 14; i++) {
-			bool naoTemNumero = cpf[i] != ponto[0]&& cpf[i] != traco[0];
-			if (naoTemNumero) {
+			bool temNumero = cpf[i] != ponto[0]&& cpf[i] != traco[0];
+			if (temNumero) {
 				numerosCpf[j] = cpf[i]-'0'; // -'0' para transformar um nomero da tabela ascii em numero int
 				j++;
 					

@@ -1,16 +1,11 @@
 #pragma once
 #include <string>
+#include "Pessoa.hpp"
 #include "Cpf.hpp"
-class Titular
+// Criando uma herança entre  as classes Titular e pessoa 
+class Titular:public Pessoa
 {
-private:
-	std::string nome;
-	Cpf cpf;
-	
 public:
-	Titular(Cpf cpf,std::string nome);
-	std::string getNome();
-private:
-	void verificaTamanhoDoNome();
+	Titular(Cpf cpf, std::string nome);
 };
 
