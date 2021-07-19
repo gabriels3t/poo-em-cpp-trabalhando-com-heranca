@@ -16,10 +16,12 @@ Conta::~Conta() {
 }
 
 void Conta::sacar(float valorSaque) {
-    if (valorSaque < 0 || valorSaque > saldo) {
+    float tarifaDeSaque = valorSaque * 0.05;
+    float valorDoSaque = valorSaque + tarifaDeSaque;
+    if (valorSaque < 0 || valorDoSaque > saldo) {
         return;
     }
-    saldo -= valorSaque;
+    saldo -= valorDoSaque;
 }
 
 void Conta::depositar(float valordeposito) {

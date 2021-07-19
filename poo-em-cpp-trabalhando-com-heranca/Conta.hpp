@@ -6,11 +6,13 @@
 //struct tudo é publico e uuma class tudo é privado 
 class Conta
 {
+protected:
+    float saldo;
 private:
     static int numeroDeContas;
     std::string numeroConta;
     Titular titular;
-    float saldo;
+    
 public:
     Conta() = delete; //deletando o construtor padrão 
     Conta(std::string numero, Titular titular); //construtor
