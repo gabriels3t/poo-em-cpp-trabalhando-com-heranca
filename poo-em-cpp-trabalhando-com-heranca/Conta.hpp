@@ -3,7 +3,7 @@
 #include "Titular.hpp"
 
 
-//struct tudo È publico e uuma class tudo È privado 
+//struct tudo √© publico e uuma class tudo √© privado
 class Conta
 {
 protected:
@@ -12,14 +12,16 @@ private:
     static int numeroDeContas;
     std::string numeroConta;
     Titular titular;
-    
+
 public:
-    Conta() = delete; //deletando o construtor padr„o 
+    Conta() = delete; //deletando o construtor padr√£o
     Conta(std::string numero, Titular titular); //construtor
-    ~Conta();//destrutor
+    virtual ~Conta();//destrutor (virtual para saber q a classe filho pode usar um destrutor)
     void sacar(float valorSaque);
     void depositar(float valordeposito);
-    float getSaldo() const; // deixando a funÁ„o constante
+    float getSaldo() const; // deixando a fun√ß√£o constante
     std::string getNumeroConta() const;
     static int getNumeroDeContas();
+    virtual float taxaSaque() const =0;  // pode-se ser definito na classe pai quanto filha
+    // quando recebe o = 0 quer dizer que nessa classe nao foi implementado. mas sim nas herdeiras
 };

@@ -5,12 +5,12 @@
 class Pessoa
 {
 protected: // apenas a classe e as herderias dela poderam utilizar os parametros 
-	std::string nome;
-	Cpf cpf;
+    std::string nome;
+    Cpf cpf;
 public:
-	Pessoa(Cpf cpf, std::string nome);
+    Pessoa(Cpf cpf, std::string nome);
 
 private:
-	void verificaTamanhoDoNome();
+    void verificaTamanhoDoNome();
 };
 

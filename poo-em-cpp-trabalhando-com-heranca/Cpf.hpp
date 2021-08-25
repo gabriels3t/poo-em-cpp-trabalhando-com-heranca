@@ -1,19 +1,13 @@
 #pragma once
 #include <string>
+
 class Cpf
 {
 private:
-	std::string cpf;
-	
+    std::string numero;
 public:
-	explicit Cpf(std::string cpf); // obrigando a ser passado pelo construtor 
-	std::string getCpf();
-private:
-	void cpfExiste();
-	int* pegandoNumerosCpf();
-	void verificandoPrimeiroDigito(); 
-	void verificandoSegundoDigito();
-	int verificadorDosUltimosDigitos(int somatoria);
-	void mensagemCpfNaoExiste();
+    explicit Cpf(std::string numero);
+    Cpf(const Cpf& cpf);
+    std::string recuperaNumero() const;
 };
 

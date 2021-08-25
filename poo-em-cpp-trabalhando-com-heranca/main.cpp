@@ -2,6 +2,7 @@
 #include <string>
 #include "Conta.hpp"
 #include "ContaPoupanca.hpp"
+#include "ContaCorrente.hpp"
 #include "Titular.hpp"
 #include "Cpf.hpp"
 #include "Funcionario.hpp"
@@ -11,7 +12,7 @@ void ExibirSaldo(const Conta& conta) {
     cout.precision(2);
     cout << fixed;
     cout << "Seu saldo e de R$:" << conta.getSaldo() << endl;
-   
+
 }
 void RealizarSaque(Conta& conta) {
     conta.sacar(200);
@@ -19,14 +20,16 @@ void RealizarSaque(Conta& conta) {
 
 int main()
 {
-    Conta umaConta("4931-5", Titular(Cpf("163.897.000-91"), "gabriel"));
-    ContaPoupanca outraConta("48931-5", Titular(Cpf("163.897.000-91"), "jorge"));
+    //ContaPoupanca*umaconta = new ContaPoupanca("48931-5", Titular(Cpf("163.897.000-91"), "jorge"));
+    ContaPoupanca outraConta("48931-5", Titular(Cpf("169.740.548-84"), "jorge"));
+    outraConta.depositar(600);
+    outraConta.sacar(200);
+    ExibirSaldo(outraConta);
+
+    ContaCorrente umaConta("4931-5", Titular(Cpf("163.897.000-91"), "gabriel"));
     umaConta.depositar(500);
     umaConta.sacar(200);
-    outraConta.depositar(500);
-    outraConta.sacar(200);
     ExibirSaldo(umaConta);
-    ExibirSaldo(outraConta);
     // pode-se utilizar nomeDaClasse:: quando o metodo for estatico
     cout << "Numero de contas  : " << Conta::getNumeroDeContas() << endl;
 

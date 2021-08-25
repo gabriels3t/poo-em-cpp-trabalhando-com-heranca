@@ -5,9 +5,9 @@
 class Funcionario : public Pessoa
 {
 private:
-	float salario;
+    float salario;
 public:
-	Funcionario(Cpf cpf, std::string nome,float salario);
-	std::string getNome();
+    Funcionario(Cpf cpf, std::string nome,float salario);
+    std::string getNome();
 };
 

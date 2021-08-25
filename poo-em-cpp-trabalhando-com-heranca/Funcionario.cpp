@@ -4,5 +4,5 @@ Funcionario::Funcionario(Cpf cpf, std::string nome,float salario):Pessoa(cpf,nom
 
 }
 std::string Funcionario::getNome() {
-	return nome;
+    return nome;
 }

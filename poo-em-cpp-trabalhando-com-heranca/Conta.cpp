@@ -5,18 +5,25 @@ int Conta::numeroDeContas = 0;
 
 // fazendo o construtor assim, o compilador nao precisa alocar 2 vezes a memoria.
 //assim deixando o codigo um pouco mais rapido
-Conta::Conta(std::string numero,Titular titular) 
-    : numeroConta(numero),titular(titular),saldo(0.0f) {
-    
+Conta::Conta(std::string numero,Titular titular)
+        : numeroConta(numero),titular(titular),saldo(0.0f) {
+
     numeroDeContas++;
 }
 
 Conta::~Conta() {
+
+    std::cout<<"Conta excluida"<< std::endl;
     numeroDeContas--;
 }
 
+/*float Conta::taxaSaque() const{
+    return 0.05;
+}
+
+*/
 void Conta::sacar(float valorSaque) {
-    float tarifaDeSaque = valorSaque * 0.05;
+    float tarifaDeSaque = valorSaque * taxaSaque();
     float valorDoSaque = valorSaque + tarifaDeSaque;
     if (valorSaque < 0 || valorDoSaque > saldo) {
         return;
